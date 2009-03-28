@@ -1,0 +1,6 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-03-28 14:03:22) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+Completed in 131ms (View: 18, DB: 1) | 200 OK [http://localhost/rails/info/properties]
