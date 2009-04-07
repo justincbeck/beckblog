@@ -672,3 +672,293 @@ Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
 Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 08:27:24) [GET]
 Rendering welcome/index
 Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 08:41:00) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 08:41:37) [GET]
+
+ActionController::RoutingError (No route matches "/blog/posts" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 08:42:39) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 08:42:42) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 08:42:47) [GET]
+Rendering welcome/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 08:42:55) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 08:43:59) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+Completed in 22ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 08:44:03) [GET]
+  [4;35;1mPost Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering posts/new
+
+ActionView::TemplateError (undefined local variable or method `end_form_tag' for #<ActionView::Base:0x26cdbec>) on line #6 of vendor/plugins/blog/app/views/posts/new.erb:
+3:     Date: Apr 6, 2009
+4:     Time: 8:45:28 PM
+5: %>
+6: <%= form_tag :action => "create" %>
+7:     Name: <%= text_field "post", "subject" %><br />
+8:     Value: <%= text_area "post", "body" %><br />
+9:     <%= submit_tag %>
+
+    vendor/plugins/blog/app/views/posts/new.erb:6
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 08:49:12) [GET]
+Rendering posts/new
+
+ActionView::TemplateError (undefined local variable or method `end_form_tag' for #<ActionView::Base:0x26ea0a8>) on line #6 of vendor/plugins/blog/app/views/posts/new.erb:
+3:     Date: Apr 6, 2009
+4:     Time: 8:45:28 PM
+5: %>
+6: <!--<%= form_tag :action => "create" %>-->
+7:     <!--Name: <%= text_field "post", "subject" %><br />-->
+8:     <!--Value: <%= text_area "post", "body" %><br />-->
+9:     <!--<%= submit_tag %>-->
+
+    vendor/plugins/blog/app/views/posts/new.erb:6
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (92.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 08:49:20) [GET]
+Rendering posts/new
+Completed in 11ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-04-07 08:49:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"WRi9MTgG51bwpObA3hZXyWOXXvWvqgwSTRTcO4bjfHE=", "post"=>{"body"=>"This is a test post", "subject"=>"Test"}}
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.3ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `subject`, `created_at`) VALUES('2009-04-07 12:49:32', 'This is a test post', 'Test', '2009-04-07 12:49:32')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 81ms (DB: 1) | 302 Found [http://localhost/posts/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 08:49:32) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+Completed in 13ms (View: 12, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 08:50:39) [GET]
+Rendering posts/new
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 08:51:30) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+Completed in 9ms (View: 8, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:05:06) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mPost Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+Completed in 76ms (View: 62, DB: 3) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:05:10) [GET]
+Rendering welcome/index
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 09:05:15) [GET]
+Rendering posts/new
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-04-07 09:05:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"WRi9MTgG51bwpObA3hZXyWOXXvWvqgwSTRTcO4bjfHE=", "post"=>{"body"=>"it's what's for dinner", "subject"=>"turkey"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.6ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `subject`, `created_at`) VALUES('2009-04-07 13:05:23', 'it\'s what\'s for dinner', 'turkey', '2009-04-07 13:05:23')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/posts/create]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:05:23) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:14:44) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:14:48) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:15:01) [GET]
+Rendering welcome/index
+Completed in 55ms (View: 54, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:15:05) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mPost Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 39ms (View: 22, DB: 4) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:16:16) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:16:25) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mPost Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 75ms (View: 21, DB: 3) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:16:27) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-07 09:16:31) [GET]
+Rendering posts/new
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:16:34) [GET]
+Rendering welcome/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionController#index (for 127.0.0.1 at 2009-04-07 09:18:14) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 09:18:21) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionController#create (for 127.0.0.1 at 2009-04-07 09:18:41) [GET]
+
+NoMethodError (undefined method `open_id?' for #<SessionController:0x265b434>):
+  app/controllers/session_controller.rb:7:in `create'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (77.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
