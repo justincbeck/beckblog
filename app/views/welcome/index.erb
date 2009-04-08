@@ -11,15 +11,16 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Justin Beck - Resume</title>
     <%= stylesheet_link_tag "default" %>
-    <script type="text/javascript" src="javascripts/prototype.js"></script>
-    <script type="text/javascript" src="javascripts/effects.js"></script>
+    <%= javascript_include_tag "prototype" %>
+    <%= javascript_include_tag "effects" %>
 </head>
 <body>
 <div align="center">
     <h2>Justin C. Beck</h2>
     <div style="margin-top: -15px">
-        E-Mail: <a href="mailto:justinbeck@mac.com">justinbeck@mac.com</a><br />
-        <a href="http://www.justinbeck.com">www.justinbeck.com</a>
+        E-Mail: <%= link_to 'justinbeck@mac.com', 'mailto:justinbeck@mac.com' %><br />
+        <%= link_to 'My Blog', '/posts' %><br />
+        <%= link_to 'www.justinbeck.com', 'http://www.justinbeck.com' %>
     </div>
     <div align="left" style="width: 600px; margin-left: .5in">
         <h3>Summary of Experience and Responsibilities</h3>

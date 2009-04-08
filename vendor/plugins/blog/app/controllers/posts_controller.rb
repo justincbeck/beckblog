@@ -5,7 +5,7 @@
 class PostsController < ApplicationController
   self.append_view_path(File.join(File.dirname(__FILE__), '..', 'views'))
 
-  before_filter :login_required
+  before_filter :login_required, :only => [ :new, :create ]
 
   def index
     @posts = Post.all
