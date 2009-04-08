@@ -962,3 +962,480 @@ NoMethodError (undefined method `open_id?' for #<SessionController:0x265b434>):
 Rendered rescues/_trace (77.7ms)
 Rendered rescues/_request_and_response (1.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:34:18) [GET]
+Rendering welcome/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-07 09:34:22) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 2ms (View: 2, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-07 09:34:27) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 08:40:31) [GET]
+Rendering welcome/index
+Completed in 45ms (View: 42, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 08:40:39) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mPost Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 126ms (View: 68, DB: 3) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2009-04-08 08:42:34) [GET]
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 08:42:40) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-04-08 08:42:48) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 08:42:48) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to Post (20090406204331)
+Migrating to Comment (20090406204345)
+Migrating to CreateUsers (20090408123100)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime, `state` varchar(255) DEFAULT 'passive', `deleted_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090408123100')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-04-08 08:44:04) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: activate, create, destroy, new, purge, suspend, and unsuspend):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-08 08:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 08:44:25) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Completed in 17ms (View: 10, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-04-08 08:44:41) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"mx828josr", "password"=>"mx828josr", "login"=>"justin", "email"=>"justinbeck@mac.com"}, "commit"=>"Sign up", "authenticity_token"=>"X3xYibNMy5QYBxv58EchXZX0Zp22CimLvbeEhlDEjWc="}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'justin') LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'justinbeck@mac.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'justin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'justinbeck@mac.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `deleted_at`, `remember_token_expires_at`, `activation_code`, `remember_token`, `login`, `email`, `created_at`, `state`) VALUES('', '971e352bfe98379520ecdf94fbed358b91be7e0e', '2009-04-08 12:44:41', NULL, '2de89174530a7a02d92cc6b17a55891d9a83dac2', NULL, NULL, '851ce09293936e2732958124bb2e481bee50c0cf', NULL, 'justin', 'justinbeck@mac.com', '2009-04-08 12:44:41', 'pending')[0m
+Sent mail to justinbeck@mac.com
+
+Date: Wed, 8 Apr 2009 08:44:41 -0400
+From: ADMINEMAIL
+To: justinbeck@mac.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: justin
+  Password: mx828josr
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/851ce09293936e2732958124bb2e481bee50c0cf
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'justin' AND `users`.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Exists (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'justinbeck@mac.com' AND `users`.id <> 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 70ms (DB: 6) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 08:44:41) [GET]
+Rendering welcome/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-04-08 08:45:50) [GET]
+  Parameters: {"activation_code"=>"851ce09293936e2732958124bb2e481bee50c0cf"}
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`activation_code` = '851ce09293936e2732958124bb2e481bee50c0cf') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'justin' AND `users`.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'justinbeck@mac.com' AND `users`.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `activated_at` = '2009-04-08 12:45:50', `activation_code` = NULL, `state` = 'active', `updated_at` = '2009-04-08 12:45:50' WHERE `id` = 1[0m
+Sent mail to justinbeck@mac.com
+
+Date: Wed, 8 Apr 2009 08:45:51 -0400
+From: ADMINEMAIL
+To: justinbeck@mac.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+justin, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/login
+Completed in 527ms (DB: 7) | 302 Found [http://localhost/activate/851ce09293936e2732958124bb2e481bee50c0cf]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 08:45:51) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 08:45:56) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 08:45:59) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-04-08 08:46:05) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"X3xYibNMy5QYBxv58EchXZX0Zp22CimLvbeEhlDEjWc=", "login"=>"justin", "password"=>"mx828josr"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'justin') AND (users.state = 'active') LIMIT 1[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 11ms (DB: 4) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 08:46:06) [GET]
+Rendering welcome/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-08 09:05:55) [GET]
+  [4;35;1mPost Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering posts/new
+Completed in 28ms (View: 14, DB: 3) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-04-08 09:05:59) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.3ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `subject`, `created_at`) VALUES('2009-04-08 13:05:59', NULL, NULL, '2009-04-08 13:05:59')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 13ms (DB: 2) | 302 Found [http://localhost/posts/create]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:05:59) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 4) [0m
+Completed in 9ms (View: 8, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:07:09) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-08 09:14:25) [GET]
+Rendering posts/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-04-08 09:14:33) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 09:14:34) [GET]
+Rendering welcome/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:14:38) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 4ms (View: 2, DB: 2) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-04-08 09:14:43) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `body`, `subject`, `created_at`) VALUES('2009-04-08 13:14:43', NULL, NULL, '2009-04-08 13:14:43')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/posts/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:14:43) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 5) [0m
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-08 09:14:56) [GET]
+Rendering posts/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-08 09:15:27) [GET]
+
+NoMethodError (undefined method `login_required' for #<PostsController:0x24dbd5c>):
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:19:15) [GET]
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:22:21) [GET]
+
+NoMethodError (undefined method `login_required' for #<PostsController:0x236f950>):
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:22:34) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 09:22:34) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-04-08 09:22:44) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"DR17rkx6c+xSs2FDHhPPG/1/FFSMzZjUkJ5MVkdP+V0=", "login"=>"justin", "password"=>"mx828josr"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'justin') AND (users.state = 'active') LIMIT 1[0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 20ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:22:44) [GET]
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mPost Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 54ms (View: 21, DB: 7) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:24:54) [GET]
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Completed in 16ms (View: 12, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:25:09) [GET]
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Completed in 16ms (View: 11, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-04-08 09:25:22) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 09:25:22) [GET]
+Rendering welcome/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:25:26) [GET]
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Completed in 9ms (View: 4, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:26:03) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 09:26:03) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-04-08 09:26:13) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"vSPGgUPwv98Rt9Fk/5jFlAQb9KICWB/Er5YiARfG314=", "login"=>"justin", "password"=>"mx828josr"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'justin') AND (users.state = 'active') LIMIT 1[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users/new
+Completed in 21ms (DB: 8) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-08 09:26:13) [GET]
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering users/new
+Completed in 24ms (View: 4, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 09:26:21) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-08 09:26:29) [GET]
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 29ms (View: 12, DB: 6) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-04-08 09:26:33) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-04-08 09:26:33) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-04-08 09:26:38) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-08 09:26:38) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/session/new]

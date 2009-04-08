@@ -14,6 +14,12 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
+  # Add an observer for RESTful Authentication
+  config.active_record.observers = :user_observer
+
+  # Add the aasm gem to the project (for RESTful Authentication)
+  config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
+
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"

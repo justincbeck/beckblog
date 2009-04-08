@@ -1,0 +1,10 @@
+<%# Created by IntelliJ IDEA.
+    User: jbeck
+    Date: Apr 6, 2009
+    Time: 8:45:28 PM
+%>
+<% form_for :post, @post, :url => { :action => "create" } do |f| %>
+    Subject: <%= f.text_field :subject %><br />
+    Budy: <%= f.text_area :body, :size => "60x12" %><br />
+    <%= submit_tag "Create" %>
+<% end %>
