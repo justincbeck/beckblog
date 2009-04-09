@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:id])
+
     if @comment = @post.comments.create(params[:comment])
       flash[:notice] = "Comment Created"
       redirect_to :controller => 'posts', :action => 'index'

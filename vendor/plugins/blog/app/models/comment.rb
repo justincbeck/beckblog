@@ -4,5 +4,5 @@
 # Time: 4:41:03 PM
 
 class Comment < ActiveRecord::Base
-    belongs_to :post
+  belongs_to :post
 end
