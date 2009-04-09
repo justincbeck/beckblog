@@ -3,7 +3,7 @@
     Date: Apr 6, 2009
     Time: 5:01:26 PM
 %>
-<h1>Insert cool and witty name here...</h1>
+<h1>Don't Look, Just Jump</h1>
 
 <% if session[:user_id] == 1 -%>
   <%= link_to 'New Post', post_path %>
@@ -11,20 +11,24 @@
 
 <% if session[:user_id] -%>
   <%= link_to 'Logout', logout_path %>
+<% else %>
+  <%= link_to 'Login', login_path %>
 <% end -%>
 
-<p>You've seen my resume, no doubt.  I'm the Director of Technical Services at a company called Intalgent.  This is an experiment in a couple of ways; I rolled this blog myself (it's Rails) so that was an adventure but, more importantly, blogging...  ...okay it's not something that I've done a lot of, however I've been thinking about doing it for a long time.  Not only have I been thinking about blogging for a long time but I've also been thinking about software development for a long time (as a side note, I was a developer once, a long, long, long time ago).</p>
-<p>With my new job here at Intalgent, I've taken on the responsibility, for better or worse, to implement some processes and procedures that will put us in a position where we can grow beyond our current size.  We've done well to this point, but without making things repeatable, standardized and documented (loosely, at least), we'll never be able to scale beyond our current client base.</p>
-<p>There is lots to consider; requirements gathering, estimation, resource allocation, standup meetings, ROWE to name but a few and I'm going to make sense of it all.  Okay, are you ready?</p>
-<p>42</p>
+<!--<p>You've seen my resume, no doubt.  I'm the Director of Technical Services at a company called Intalgent.  This is an experiment in a couple of ways; I rolled this blog myself (it's Rails) so that was an adventure but, more importantly, blogging...  ...okay it's not something that I've done a lot of, however I've been thinking about doing it for a long time.  Not only have I been thinking about blogging for a long time but I've also been thinking about software development for a long time (as a side note, I was a developer once, a long, long, long time ago).</p>-->
+<!--<p>With my new job here at Intalgent, I've taken on the responsibility, for better or worse, to implement some processes and procedures that will put us in a position where we can grow beyond our current size.  We've done well to this point, but without making things repeatable, standardized and documented (loosely, at least), we'll never be able to scale beyond our current client base.</p>-->
+<!--<p>There is lots to consider; requirements gathering, estimation, resource allocation, standup meetings, ROWE to name but a few and I'm going to make sense of it all.  Okay, are you ready?</p>-->
+<!--<p>42</p>-->
 
 <% @posts.each do |post| -%>
   <h2><%= h post.subject %></h2>
+  <%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(post.user_id).login %><br />
   <%= post.body %>
   <h3>Your Comments (and sometimes mine)</h3>
   <% post.comments.each do |comment| -%>
+    <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
     <% if comment.username != nil && comment.username != '' -%>
-        <b>by <%= comment.username %></b><br/>
+         by <%= comment.username %><br/>
     <% else %>
         <b>by Anonymous</b><br/>
     <% end -%>
