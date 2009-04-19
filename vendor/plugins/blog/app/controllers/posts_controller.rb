@@ -7,15 +7,20 @@ class PostsController < ApplicationController
 
   before_filter :login_required, :only => [ :new, :create ]
 
+  layout 'main'
   def index
     @posts = Post.all
   end
 
+  layout 'main'
   def show
+    @posts = Post.all
     @post = Post.find(params[:id])
   end
 
+  layout 'main'
   def new
+    @posts = Post.all
     @post = Post.new
   end
 

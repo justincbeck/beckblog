@@ -1,0 +1,66 @@
+<%# Created by IntelliJ IDEA.
+    User: jbeck
+    Date: Apr 19, 2009
+    Time: 3:06:24 PM
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Don't look just jump</title>
+
+    <%= stylesheet_link_tag "screen", :media => "screen, projection" %>
+    <%= stylesheet_link_tag "print", :media => "print" %>
+    <!--[if IE]>
+        <%= stylesheet_link_tag "ie", :media => "screen, projection" %>
+    <![endif]-->
+
+    <%= javascript_include_tag "prototype" %>
+    <%= javascript_include_tag "effects" %>
+</head>
+<body>
+<div class="container">
+    <div class="prepend-3 span-18">
+        <div class="span-18" style="background-color: #E8E8E8;">
+            <div class="span-18 main_background" style="margin-bottom: -60px;"></div>
+            <!--<div class="span-18" style="background-color: #707070; height: 65px; margin-bottom: -60px;"></div>-->
+            <div class="span-13" style="padding: 10px; border-right: thin dotted;">
+                <h1 style="margin-bottom: -2px;">Don't Look, Just Jump</h1>
+
+                <!--<% if session[:user_id] == 1 -%>-->
+                  <!--<%= link_to 'New Post', post_path %>-->
+                <!--<% end -%>-->
+
+                <!--<% if session[:user_id] -%>-->
+                  <!--<%= link_to 'Logout', logout_path %>-->
+                <!--<% else %>-->
+                  <!--<%= link_to 'Login', login_path %>-->
+                <!--<% end -%>-->
+
+                <div id="body" style="margin-top: 10px">
+                    <%= @content_for_layout %>
+                </div>
+            </div>
+            <div class="span-4 last" style="padding: 10px; margin-left: -10px;">
+                <%= image_tag "justin.jpg", :alt => 'Justin C Beck', :size => "157x157", :style => "border:1px solid #fff; margin-bottom: 10px;" %>
+                <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+                    <h5 style="margin: 0px; padding: 5px 0 5px 0;">About the Blog and Me</h5>
+                    <%= link_to 'About Me', '/about' %><br />
+                    <%= link_to 'Resume', '/resume' %><br />
+                    <%= link_to 'Blog', '/' %><br />
+                    &nbsp;
+                </div>
+                <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+                    <h5 style="margin: 0px; padding: 5px 0 5px 0;">Recent Posts</h5>
+                    <% @posts.each do |post| -%>
+                      <%= link_to post.subject, show_path(post.id) %><br />
+                    <% end -%><br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

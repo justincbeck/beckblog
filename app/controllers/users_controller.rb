@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
 
   # render new.rhtml
+  layout 'main'
   def new
+    @posts = Post.all
     @user = User.new
   end
  

@@ -2,8 +2,9 @@
 class SessionsController < ApplicationController
 
   # render new.rhtml
+  layout 'main'
   def new
-    
+      @posts = Post.all
   end
 
   def create
