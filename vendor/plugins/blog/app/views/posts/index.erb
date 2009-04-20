@@ -3,26 +3,31 @@
     Date: Apr 6, 2009
     Time: 5:01:26 PM
 %>
-<% @posts.each do |post| -%>
-  <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
-      <%= link_to post.subject, show_path(post.id) %>
-  </h2>
-  <span class="small quiet"><%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(post.user_id).login %></span><br />
-  <%= post.body %><br /><br />
-  <div style="margin: 10px;">
-      <h3 class="bottom">Your Comments (and sometimes mine)</h3>
-      <% post.comments.each do |comment| -%>
-        <span class="small quiet">
-            <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
-            <% if comment.username != nil && comment.username != '' -%>
-                 by <%= comment.username %><br/>
-            <% else %>
-                <b>by Anonymous</b><br/>
-            <% end -%>
-        </span>
-        <hr/>
-        <%= comment.body %><br/><br/>
-      <% end -%>
-      <%= link_to 'Post a comment', new_comment_path(post) %>
-  </div>
-<% end -%>
+<% if @posts.size > 0 %>
+    <% @posts.each do |post| -%>
+      <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
+          <%= link_to post.subject, show_path(post.id) %>
+      </h2>
+      <span class="small quiet"><%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(post.user_id).login %></span><br />
+      <%= post.body %><br /><br />
+      <div style="margin: 10px;">
+          <h3 class="bottom">Your Comments (and sometimes mine)</h3>
+          <% post.comments.each do |comment| -%>
+            <span class="small quiet">
+                <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
+                <% if comment.username != nil && comment.username != '' -%>
+                     by <%= comment.username %><br/>
+                <% else %>
+                    <b>by Anonymous</b><br/>
+                <% end -%>
+            </span>
+            <hr/>
+            <%= comment.body %><br/><br/>
+          <% end -%>
+          <%= link_to 'Post a comment', new_comment_path(post) %>
+      </div>
+   <% end %>
+<% else %>
+    <p style="padding: 50px 0 0 30px;">There are currently no blog posts.  I am writing one now and will post it shortly.</p>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+<% end %>

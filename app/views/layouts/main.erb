@@ -52,12 +52,14 @@
                     <%= link_to 'Blog', '/' %><br />
                     &nbsp;
                 </div>
-                <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
-                    <h5 style="margin: 0px; padding: 5px 0 5px 0;">Recent Posts</h5>
-                    <% @posts.each do |post| -%>
-                      <%= link_to post.subject, show_path(post.id) %><br />
-                    <% end -%><br />
-                </div>
+                <% if @posts.size > 0 %>
+                    <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+                        <h5 style="margin: 0px; padding: 5px 0 5px 0;">Recent Posts</h5>
+                        <% @posts.each do |post| -%>
+                          <%= link_to post.subject, show_path(post.id) %><br />
+                        <% end -%><br />
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
