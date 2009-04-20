@@ -14,13 +14,13 @@ class PostsController < ApplicationController
 
   layout 'main'
   def show
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @post = Post.find(params[:id])
   end
 
   layout 'main'
   def new
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @post = Post.new
   end
 

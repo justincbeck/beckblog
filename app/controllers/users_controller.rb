@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # render new.rhtml
   layout 'main'
   def new
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @user = User.new
   end
  

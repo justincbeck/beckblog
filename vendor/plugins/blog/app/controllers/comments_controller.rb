@@ -5,12 +5,13 @@
 class CommentsController < ApplicationController
   layout 'main'
   def index
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @comments = Comment.find_all_by_post_id(params[:post_id])
   end
 
   layout 'main'
   def new
+    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @comment = Comment.new
   end
 
@@ -26,5 +27,4 @@ class CommentsController < ApplicationController
       render :action => 'new'
     end
   end
-  #.... more code
 end
