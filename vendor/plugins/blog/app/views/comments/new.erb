@@ -3,10 +3,14 @@
     Date: Apr 8, 2009
     Time: 11:40:18 AM
 %>
-<%= @comment.post %>
+<div class="prepend-1" style="padding-top: 15px;">
+    <%= @comment.post %>
 
-<% form_for :comment, @comment, :url => { :action => "create" } do |f| %>
-    Username:<br /><%= f.text_field :username %><br />
-    Comment:<br /><%= f.text_area :body, :size => "60x12" %><br />
-    <%= submit_tag "Comment" %>
-<% end %>
+    <% form_for :comment, @comment, :url => { :action => "create" } do |f| %>
+        Username:<br />
+        <%= f.text_field :username %><br /><br />
+        Comment:<br />
+        <%= f.text_area :body, :size => "60x12" %><br />
+        <%= submit_tag "Comment" %>
+    <% end %>
+</div>

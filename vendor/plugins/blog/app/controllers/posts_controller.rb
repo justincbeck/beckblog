@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   layout 'main'
   def index
-    @posts = Post.all
+    @posts = Post.all(:order => "created_at DESC");
   end
 
   layout 'main'
@@ -25,7 +25,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = Post.create(params[:post])
+    @user = User.all([ "login = ?", current_user ])[0]
+
+    if @post = @user.posts.create(params[:post])
       flash[:notice] = "Post Created"
       redirect_to :action => 'index'
     else
@@ -33,5 +35,4 @@ class PostsController < ApplicationController
       render :action => 'new'
     end
   end
-  #.... more code
 end

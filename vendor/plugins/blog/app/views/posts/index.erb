@@ -3,15 +3,16 @@
     Date: Apr 6, 2009
     Time: 5:01:26 PM
 %>
-<% if @posts.size > 0 %>
+<% if @posts.size > 0 -%>
     <% @posts.each do |post| -%>
       <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
           <%= link_to post.subject, show_path(post.id) %>
       </h2>
       <span class="small quiet"><%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(post.user_id).login %></span><br />
-      <%= post.body %><br /><br />
+      <%= post.body %><br />
       <div style="margin: 10px;">
-          <h3 class="bottom">Your Comments (and sometimes mine)</h3>
+          <h4 class="bottom">Your Comments (and sometimes mine)</h4>
+          
           <% post.comments.each do |comment| -%>
             <span class="small quiet">
                 <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
@@ -24,7 +25,17 @@
             <hr/>
             <%= comment.body %><br/><br/>
           <% end -%>
-          <%= link_to 'Post a comment', new_comment_path(post) %>
+          <div id="comment_form">
+              <% remote_form_for :comment, @comment,
+                            :url => { :controller => 'comments', :action => 'create', :id => post },
+                            :success => "location.reload(true)" do |f| %>
+                  Username:<br />
+                  <%= f.text_field :username %><br />
+                  Comment:<br />
+                  <%= f.text_area :body, :cols => 60, :rows => 6 , :style => "margin-top: 0px;"%><br />
+                  <%= submit_tag "Comment" %>
+              <% end %>
+          </div>
       </div>
    <% end %>
 <% else %>
