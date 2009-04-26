@@ -1,0 +1,12 @@
+# .gitignore
+
+.generators
+.rakeTasks
+justinbeck.iml
+justinbeck.ipr
+justinbeck.iws
+
+log/*.log
+tmp/**/*
+doc/api
+doc/app
