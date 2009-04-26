@@ -1,7 +1,0 @@
-Thread ID: 109440
-Total: 0.004848
-
- %self     total     self     wait    child    calls  name
-100.00      0.00     0.00     0.00     0.00        1  ActiveSupport::Testing::Performance::Profiler#run
-
-

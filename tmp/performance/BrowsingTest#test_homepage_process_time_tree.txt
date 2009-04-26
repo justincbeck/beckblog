@@ -1,6 +1,0 @@
-events: process_time
-
-fl=/Users/jbeck/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/testing/performance.rb
-fn=ActiveSupport::Testing::Performance::Profiler::run
-177 4848
-
