@@ -19,15 +19,71 @@
 
     <%= javascript_include_tag "prototype" %>
     <%= javascript_include_tag "effects" %>
+    
+    <script type="text/javascript">
+
+        function setCookie(c_name, value, expiredays)
+        {
+            var exdate=new Date();
+            exdate.setDate(exdate.getDate() + expiredays);
+            document.cookie = c_name + "=" + encodeURI(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+        }
+
+        function getCookie()
+        {
+            var name = "";
+            var age = 0;
+
+            var c_start = -1;
+            var c_end = -1;
+
+            if (document.cookie.length > 0)
+            {
+                c_start = document.cookie.indexOf("name=");
+
+                if (c_start != -1)
+                {
+                    c_start = c_start + "name=".length;
+
+                    c_end = document.cookie.indexOf(";", c_start);
+
+                    if (c_end == -1)
+                        c_end = document.cookie.length;
+
+                    name = decodeURI(document.cookie.substring(c_start, c_end));
+                }
+
+                c_start = document.cookie.indexOf("age=");
+
+                if (c_start != -1)
+                {
+                    c_start = c_start + "age=".length;
+
+                    c_end = document.cookie.indexOf(";", c_start);
+
+                    if (c_end == -1)
+                        c_end = document.cookie.length;
+
+                    age = decodeURI(document.cookie.substring(c_start, c_end));
+                }
+
+                alert(name + " is " + age + " years old!");
+            }
+            return "";
+        }
+    </script>
 
 </head>
 <body>
 <div class="container">
     <div class="prepend-3 span-18">
         <div class="span-18" style="background-color: #E8E8E8;">
-            <div class="span-18 main_background" style="margin-bottom: -60px;"></div>
+            <div class="span-18 main_background" style="margin-bottom: -60px;" ></div>
             <div class="span-13" style="padding: 10px; border-right: thin dotted;">
                 <h1 style="margin-bottom: -2px;">Don't Look, Just Jump</h1>
+                <!--<%= link_to 'Set Justin Cookie', '#', :onclick => "setCookie('name', 'Justin', 5); setCookie('age', 37, 5);" %>&nbsp;-->
+                <!--<%= link_to 'Set Anna Cookie', '#', :onclick => "setCookie('name', 'Anna', 5); setCookie('age', 2, 5);" %>&nbsp;-->
+                <!--<%= link_to 'Get Cookie', '#', :onclick => "getCookie();" %>-->
 
                 <!--<% if session[:user_id] == 1 -%>-->
                   <!--<%= link_to 'New Post', post_path %>-->
@@ -46,7 +102,7 @@
             <div class="span-4 last" style="padding: 10px; margin-left: -10px;">
                 <%= image_tag "justin.jpg", :alt => 'Justin C Beck', :size => "157x157", :style => "border:1px solid #fff; margin-bottom: 10px;" %>
                 <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
-                    <h5 style="margin: 0px; padding: 5px 0 5px 0;">About the Blog and Me</h5>
+                    <h5 style="margin: 0; padding: 5px 0 5px 0;">About the Blog and Me</h5>
                     <%= link_to 'About Me', '/about' %><br />
                     <%= link_to 'Resume', '/resume' %><br />
                     <%= link_to 'Blog', '/' %><br />
@@ -54,7 +110,7 @@
                 </div>
                 <% if @posts.size > 0 %>
                     <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
-                        <h5 style="margin: 0px; padding: 5px 0 5px 0;">Recent Posts</h5>
+                        <h5 style="margin: 0; padding: 5px 0 5px 0;">Recent Posts</h5>
                         <% @posts.each do |post| -%>
                           <%= link_to post.subject, show_path(post.id) %><br />
                         <% end -%><br />

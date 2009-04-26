@@ -15615,3 +15615,235 @@ Processing PostsController#index (for 127.0.0.1 at 2009-04-19 22:35:09) [GET]
 Rendering template within layouts/main
 Rendering posts/index
 Completed in 7ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (39.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:35:09) [GET]
+  [4;35;1mPost Load (97.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 227ms (View: 94, DB: 137) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:35:38) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:36:10) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 71ms (View: 71, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:44:44) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:45:52) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 10:46:03) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 12:26:48) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 25ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 12:28:02) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 56ms (View: 55, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 12:28:15) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-22 12:28:33) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (71.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:30:18) [GET]
+  [4;35;1mPost Load (241.9ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 365ms (View: 92, DB: 313) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:32:25) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:32:38) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:32:39) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:32:43) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:38:22) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:46:38) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:46:42) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 12:50:25) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 14:19:38) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 14:20:21) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 14:21:01) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AboutController#index (for 127.0.0.1 at 2009-04-26 14:21:07) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 5[0m
+Rendering template within layouts/main
+Rendering about/index
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://localhost/about]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ResumeController#index (for 127.0.0.1 at 2009-04-26 14:21:10) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 5[0m
+Rendering template within layouts/main
+Rendering resume/index
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/resume]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 14:21:12) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AboutController#index (for 127.0.0.1 at 2009-04-26 14:21:23) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 5[0m
+Rendering template within layouts/main
+Rendering about/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/about]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AboutController#index (for 127.0.0.1 at 2009-04-26 14:21:49) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 5[0m
+Rendering template within layouts/main
+Rendering about/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/about]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ResumeController#index (for 127.0.0.1 at 2009-04-26 14:21:50) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 5[0m
+Rendering template within layouts/main
+Rendering resume/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/resume]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-04-26 14:21:51) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/main
+Rendering posts/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
