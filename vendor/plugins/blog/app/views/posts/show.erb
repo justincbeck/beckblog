@@ -15,7 +15,7 @@
       <span class="small quiet">
           <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
           <% if comment.username != nil && comment.username != '' -%>
-               by <%= comment.username %><br/>
+               <b>by <%= comment.username %></b><br />
           <% else %>
               <b>by Anonymous</b><br/>
           <% end -%>
@@ -29,6 +29,8 @@
                       :success => "location.reload(true)" do |f| %>
             Username:<br />
             <%= f.text_field :username %><br />
+            Email (Optional):<br />
+            <%= f.text_field :email %><br />
             Comment:<br />
             <%= f.text_area :body, :cols => 60, :rows => 6 , :style => "margin-top: 0px;"%><br />
             <%= submit_tag "Comment" %>

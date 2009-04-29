@@ -5,6 +5,6 @@
 class ResumeController < ApplicationController
     layout 'main'
     def index
-        @posts = Post.all(:order => "created_at DESC", :limit => 5)
+        @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
     end
 end
