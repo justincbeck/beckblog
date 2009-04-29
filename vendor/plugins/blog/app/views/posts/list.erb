@@ -1,0 +1,31 @@
+<%# Created by IntelliJ IDEA.
+    User: jbeck
+    Date: Apr 28, 2009
+    Time: 9:28:33 PM
+%>
+<% if @posts.size > 0 -%>
+    <table class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
+        <tr>
+            <th>Subject</th>
+            <th>Created</th>
+            <th>Author</th>
+            <th>Published?</th>
+        </tr>
+    <% @posts.each do |post| -%>
+        <tr>
+            <td><%= link_to post.subject, edit_path(post.id) %></td>
+            <td><%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %></td>
+            <td><%= User.find(post.user_id).login %></td>
+            <% if post.published? %>
+                <td>Published</td>
+            <% else %>
+                <td>Draft</td>
+            <% end %>
+        </tr>
+        <% end -%>
+    </table>
+<% else %>
+    <p style="padding: 50px 0 0 30px;">There are currently no blog posts.  I am writing one now and will post it shortly.</p>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<% end %>
+

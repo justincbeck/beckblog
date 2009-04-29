@@ -1,0 +1,16 @@
+<%# Created by IntelliJ IDEA.
+    User: jbeck
+    Date: Apr 28, 2009
+    Time: 9:32:22 PM
+%>
+<div class="prepend-1" style="padding-top: 15px;">
+    <% form_for :post, @post, :url => { :action => "update" } do |f| %>
+        Subject:<br />
+        <%= f.text_field :subject %><br /><br />
+        Body:<br />
+        <%= f.text_area :body, :size => "50x15" %><br />
+        Published: <%= f.check_box :published %>
+        <br /><br />
+        <%= submit_tag "Update" %>
+    <% end %>
+</div>
