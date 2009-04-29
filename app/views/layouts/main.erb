@@ -116,6 +116,14 @@
                         <% end -%><br />
                     </div>
                 <% end %>
+                <% if session[:user_id] == 1 %>
+                    <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+                        <h5 style="margin: 0; padding: 5px 0 5px 0;">Administration</h5>
+                        <%= link_to 'Posts', '/list' %><br />
+                        <%= link_to 'Logout', '/logout' %><br />
+                        &nbsp;
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
