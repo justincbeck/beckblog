@@ -12,7 +12,6 @@
       <%= post.body %><br />
       <div style="margin: 10px;">
           <h4 class="bottom">Your Comments (and sometimes mine)</h4>
-          
           <% post.comments.each do |comment| -%>
             <span class="small quiet">
                 <%= comment.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
@@ -40,5 +39,5 @@
    <% end %>
 <% else %>
     <p style="padding: 50px 0 0 30px;">There are currently no blog posts.  I am writing one now and will post it shortly.</p>
-    <br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <% end %>
