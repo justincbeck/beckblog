@@ -5,7 +5,7 @@
     To change this template use File | Settings | File Templates.
 %>
 <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
-    <%= h @post.subject %>
+<%= h @post.subject %>
 </h2>
 <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).login %></span><br />
 <%= @post.body %><br />

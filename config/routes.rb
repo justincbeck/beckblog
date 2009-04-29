@@ -7,6 +7,9 @@ ActionController::Routing::Routes.draw do |map|
   map.create_comment '/create_comment/:id', :controller => 'comments', :action => 'create'
   map.post '/post', :controller => 'posts', :action => 'new'
   map.show '/show/:id', :controller => 'posts', :action => 'show'
+  map.edit '/edit/:id', :controller => 'posts', :action => 'edit'
+  map.list '/list', :controller => 'posts', :action => 'list'
+  map.update '/update/:id', :controller => 'posts', :action => 'update'
 
   map.resources :users
   map.resource :session

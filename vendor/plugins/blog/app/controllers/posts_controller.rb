@@ -24,6 +24,22 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  layout 'main'
+  def list
+      @posts = Post.all
+  end
+
+  layout 'main'
+  def edit
+      @posts = Post.all(:order => "created_at DESC", :limit => 5)
+      @post = Post.find(params[:id])
+  end
+
+  def update
+      Post.update(params[:id], params[:post])
+      redirect_to :action => 'list'
+  end
+
   def create
     @user = User.all([ "login = ?", current_user ])[0]
 
