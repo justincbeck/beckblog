@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090409010056) do
+ActiveRecord::Schema.define(:version => 20090429130653) do
 
   create_table "comments", :force => true do |t|
     t.string   "username"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20090409010056) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_id"
+    t.boolean  "published"
   end
 
   create_table "users", :force => true do |t|

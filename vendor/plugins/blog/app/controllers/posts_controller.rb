@@ -9,30 +9,32 @@ class PostsController < ApplicationController
 
   layout 'main'
   def index
-    @posts = Post.all(:order => "created_at DESC");
+    @posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC")
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   layout 'main'
   def show
-    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @post = Post.find(params[:id])
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   layout 'main'
   def new
-    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @post = Post.new
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   layout 'main'
   def list
-      @posts = Post.all
+    @posts = Post.all
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   layout 'main'
   def edit
-      @posts = Post.all(:order => "created_at DESC", :limit => 5)
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   def update

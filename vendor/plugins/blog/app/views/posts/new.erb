@@ -9,6 +9,8 @@
         <%= f.text_field :subject %><br /><br />
         Body:<br />
         <%= f.text_area :body, :size => "50x15" %><br />
+        Published: <%= f.check_box :published %>
+        <br /><br />
         <%= submit_tag "Create" %>
-    <% end %>
+<% end %>
 </div>
