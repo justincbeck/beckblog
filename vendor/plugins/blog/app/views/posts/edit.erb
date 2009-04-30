@@ -3,14 +3,38 @@
     Date: Apr 28, 2009
     Time: 9:32:22 PM
 %>
-<div class="prepend-1" style="padding-top: 15px;">
-    <% form_for :post, @post, :url => { :action => "update" } do |f| %>
-        Subject:<br />
-        <%= f.text_field :subject %><br /><br />
-        Body:<br />
-        <%= f.text_area :body, :size => "50x15" %><br />
-        Published: <%= f.check_box :published %>
-        <br /><br />
-        <%= submit_tag "Update" %>
-    <% end %>
-</div>
+<script type="text/javascript">
+    function preview()
+    {
+        Effect.Fade('form_div', { duration: 0.5 });
+        setTimeout("Effect.Appear('preview_div', { duration: 0.5 })", 500);
+    }
+    function edit()
+    {
+        Effect.Fade('preview_div', { duration: 0.5 });
+        setTimeout("Effect.Appear('form_div', { duration: 0.5 })", 500);
+    }
+</script>
+
+<% form_for :post, @post, :url => { :action => "update" } do |f| %>
+    <div class="span-13" style="height: 420px; padding-top: 15px;">
+        <br />
+        <div class="prepend-1"><%= submit_tag "Update", :id => 'submit_button' %>&nbsp;<%= tag "input", { :type => "button", :id => "preview_button", :value => "Preview", :onclick => 'preview();' } %>&nbsp;<%= tag "input", { :type => "button", :value => "Edit", :id => "edit_button", :onclick => 'edit();' } %></div>
+        <br />
+        <div id="form_div" class="prepend-1">
+            Subject:<br />
+            <%= f.text_field :subject %><br /><br />
+            Body:<br />
+            <%= f.text_area :body, :size => "50x15" %><br />
+            Published: <%= f.check_box :published %>
+            <br /><br />
+        </div>
+        <div id="preview_div" style="display:none;">
+            <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
+                <%= h @post.subject %>
+            </h2>
+            <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).login %></span><br />
+            <%= @post.body %><br /><br />
+        </div>
+    </div>
+<% end %>
