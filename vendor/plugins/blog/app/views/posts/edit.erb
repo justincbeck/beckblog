@@ -16,25 +16,25 @@
     }
 </script>
 
-<% form_for :post, @post, :url => { :action => "update" } do |f| %>
-    <div class="span-13" style="height: 420px; padding-top: 15px;">
+<div class="span-13" style="height: 420px; padding-top: 10px;">
+    <div id="form_div">
         <br />
-        <div class="prepend-1"><%= submit_tag "Update", :id => 'submit_button' %>&nbsp;<%= tag "input", { :type => "button", :id => "preview_button", :value => "Preview", :onclick => 'preview();' } %>&nbsp;<%= tag "input", { :type => "button", :value => "Edit", :id => "edit_button", :onclick => 'edit();' } %></div>
-        <br />
-        <div id="form_div" class="prepend-1">
+        <% form_for :post, @post, :url => { :action => "update" } do |f| %>
             Subject:<br />
             <%= f.text_field :subject %><br /><br />
             Body:<br />
-            <%= f.text_area :body, :size => "50x15" %><br />
+            <%= f.text_area :body, :size => "60x15" %><br />
             Published: <%= f.check_box :published %>
             <br /><br />
-        </div>
-        <div id="preview_div" style="display:none;">
-            <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
-                <%= h @post.subject %>
-            </h2>
-            <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).login %></span><br />
-            <%= @post.body %><br /><br />
-        </div>
+            <%= submit_tag "Update", :id => 'submit_button' %>&nbsp;<%= tag "input", { :type => "button", :id => "preview_button", :value => "Preview", :onclick => 'preview();' } %>
+        <% end %>
     </div>
-<% end %>
+    <div id="preview_div" style="display:none;">
+        <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
+            <%= h @post.subject %>
+        </h2>
+        <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).name %></span><br />
+        <%= @post.body %><br /><br />
+        <%= tag "input", { :type => "button", :value => "Edit", :id => "edit_button", :onclick => 'edit();' } %>
+    </div>
+</div>
