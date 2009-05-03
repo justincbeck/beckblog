@@ -10,3 +10,4 @@ log/*.log
 tmp/**/*
 doc/api
 doc/app
+scratch_directory/**/*
