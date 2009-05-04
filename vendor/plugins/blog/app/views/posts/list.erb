@@ -11,17 +11,17 @@
             <th>Author</th>
             <th>Published?</th>
         </tr>
-    <% @posts.each do |post| -%>
-        <tr>
-            <td><%= link_to post.subject, edit_path(post.id) %></td>
-            <td><%= post.created_at.strftime("%m/%d/%Y %H:%M:%S") %></td>
-            <td><%= User.find(post.user_id).login %></td>
-            <% if post.published? %>
-                <td>Published</td>
-            <% else %>
-                <td>Draft</td>
-            <% end %>
-        </tr>
+        <% @posts.each do |post| -%>
+            <tr>
+                <td><%= link_to post.subject, edit_path(post.id) %></td>
+                <td><%= post.created_at.strftime("%m/%d/%Y") %></td>
+                <td><%= User.find(post.user_id).login %></td>
+                <% if post.published? %>
+                    <td>Published</td>
+                <% else %>
+                    <td>Draft</td>
+                <% end %>
+            </tr>
         <% end -%>
     </table>
 <% else %>
