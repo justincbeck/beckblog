@@ -6,6 +6,12 @@
 <script type="text/javascript">
     function preview()
     {
+        var subject = document.getElementById('post_subject').getValue();
+        var body = document.getElementById('post_body').getValue();
+
+        document.getElementById('preview_subject').innerHTML = subject;
+        document.getElementById('preview_body').innerHTML = body;
+
         Effect.Fade('form_div', { duration: 0.5 });
         setTimeout("Effect.Appear('preview_div', { duration: 0.5 })", 500);
     }
@@ -15,24 +21,23 @@
         setTimeout("Effect.Appear('form_div', { duration: 0.5 })", 500);
     }
 </script>
-<div id="form_div" class="span-13" style="padding-top: 10px;">
-    <br />
-    <% form_for :post, @post, :url => { :action => "update" }, :id => 'edit_post_form' do |f| %>
+<% form_for :post, @post, :url => { :action => "update" }, :id => 'edit_post_form' do |f| %>
+    <div id="form_div" class="span-13" style="padding-top: 0px;">
+        <br />
         Subject:<br />
-        <%= f.text_field :subject %><br /><br />
+        <%= f.text_field :subject, :id => 'post_subject' %><br /><br />
         Body:<br />
-        <%= f.text_area :body, :size => "60x15" %><br />
+        <%= f.text_area :body, :size => "60x15", :id => 'post_body' %><br />
         Published: <%= f.check_box :published %>
         <br /><br />
         <%= submit_tag "Update", :id => 'submit_button' %>&nbsp;<%= tag "input", { :type => "button", :id => "preview_button", :value => "Preview", :onclick => 'preview();' } %>
-    <% end %>
-</div>
-<div id="preview_div" class="span-13" style="padding-top: 10px; display:none;">
-    <!-- TODO: Figure out how to make the preview show the current content rather than the saved content -->
-    <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
-        <%= h @post.subject %>
-    </h2>
-    <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).name %></span><br />
-    <%= @post.body %>
-    <%= tag "input", { :type => "button", :value => "Edit", :id => "edit_button", :onclick => 'edit();' } %>
-</div>
+    </div>
+    <div id="preview_div" class="span-13" style="padding-top: 0px; display:none;">
+        <h2 class="bottom" style="margin-bottom: -10px; padding-top: 10px;">
+            <span id="preview_subject"></span>
+        </h2>
+        <span class="small quiet"><%= @post.created_at.strftime("%m/%d/%Y %H:%M:%S") %> by <%= User.find(@post.user_id).name %></span><br />
+        <span id="preview_body"></span>
+        <%= tag "input", { :type => "button", :value => "Edit", :id => "edit_button", :onclick => 'edit();' } %>
+    </div>
+<% end %>
