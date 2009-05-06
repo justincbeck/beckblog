@@ -3,18 +3,19 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
-  map.new_comment '/comment/:id', :controller => 'comments', :action => 'new'
-  map.create_comment '/create_comment/:id', :controller => 'comments', :action => 'create'
-  map.post '/post', :controller => 'posts', :action => 'new'
-  map.show '/show/:id', :controller => 'posts', :action => 'show'
-  map.edit '/edit/:id', :controller => 'posts', :action => 'edit'
-  map.list '/list', :controller => 'posts', :action => 'list'
-  map.update '/update/:id', :controller => 'posts', :action => 'update'
 
   map.resources :users
   map.resource :session
-  map.resources :comments
-  map.resources :posts
+  map.resources :posts,
+                :member => {
+                    :edit => :get,
+                    :update => :post
+                },
+                :collection => {
+                    :list => :get
+                } do | post |
+    post.resources :comments
+  end
 
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
 

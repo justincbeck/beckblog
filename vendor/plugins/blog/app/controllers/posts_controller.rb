@@ -5,41 +5,34 @@
 class PostsController < ApplicationController
   self.append_view_path(File.join(File.dirname(__FILE__), '..', 'views'))
 
-  before_filter :login_required, :only => [ :new, :create, :list, :edit, :update ]
-
   layout 'main'
+
+  before_filter :login_required, :only => [ :new, :create, :list, :edit, :update ]
+  before_filter :summary_posts, :only => [ :index, :show, :new, :list, :edit ]
+
   def index
     @posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC")
-    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
-  layout 'main'
   def show
     @post = Post.find(params[:id])
-    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
-  layout 'main'
   def new
     @post = Post.new
-    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
-  layout 'main'
   def list
     @posts = Post.all
-    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
-  layout 'main'
   def edit
     @post = Post.find(params[:id])
-    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 
   def update
-      Post.update(params[:id], params[:post])
-      redirect_to :action => 'list'
+    Post.update(params[:id, :post])
+    redirect_to :action => 'list'
   end
 
   def create
@@ -53,4 +46,10 @@ class PostsController < ApplicationController
       render :action => 'new'
     end
   end
+
+  private
+    def summary_posts
+      @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
+    end
+
 end

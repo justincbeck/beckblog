@@ -13,7 +13,7 @@
         </tr>
         <% @posts.each do |post| -%>
             <tr>
-                <td><%= link_to post.subject, edit_path(post.id) %></td>
+                <td><%= link_to post.subject, edit_post_path(post) %></td>
                 <td><%= post.created_at.strftime("%m/%d/%Y") %></td>
                 <td><%= User.find(post.user_id).login %></td>
                 <% if post.published? %>

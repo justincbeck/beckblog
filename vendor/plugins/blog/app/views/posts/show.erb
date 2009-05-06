@@ -17,11 +17,11 @@
           <% if comment.username != nil && comment.username != '' -%>
                <b>by <%= comment.username %></b><br />
           <% else %>
-              <b>by Anonymous</b><br/>
+              <b>by Anonymous</b><br />
           <% end -%>
       </span>
       <hr/>
-      <%= comment.body %>
+      <%= comment.body %><br /><br />
     <% end -%>
     <div id="comment_form" style="display: block;">
         <% remote_form_for :comment, @comment,
