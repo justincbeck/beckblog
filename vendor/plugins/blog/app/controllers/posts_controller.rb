@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    Post.update(params[:id, :post])
+    Post.update(params[:id], params[:post])
     redirect_to :action => 'list'
   end
 
@@ -51,5 +51,4 @@ class PostsController < ApplicationController
     def summary_posts
       @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
     end
-
 end
