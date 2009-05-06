@@ -6,8 +6,6 @@ class CommentsController < ApplicationController
   before_filter :get_post
 
   def create
-#    @post = Post.find(params[:id])
-
     if @comment = @post.comments.create(params[:comment])
       flash[:notice] = "Comment Created"
       UserMailer.deliver_comment(@post.subject, @comment.username)
