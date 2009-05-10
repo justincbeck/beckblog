@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class AboutControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  def test_index
+    @summary_posts = get :index
+    assert_not_nil @summary_posts
+#    assert @summary_posts.length >= 0
+#    assert @summary_posts.size >= 0
   end
 end
