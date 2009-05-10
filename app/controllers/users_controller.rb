@@ -3,28 +3,47 @@ class UsersController < ApplicationController
   # TODO: Figure out how to use 'admin' functionality
   #before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   # Added this so that adding users is protected
-  before_filter :login_required
+  before_filter :login_required, :only => [:list, :show, :edit, :create] 
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :summary_posts
+
+  layout 'main'
 
   # render new.rhtml
-  layout 'main'
   def new
-    @posts = Post.all(:order => "created_at DESC", :limit => 5)
     @user = User.new
   end
  
-  def create
+  def signup
     logout_keeping_session!
     @user = User.new(params[:user])
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
     if success && @user.errors.empty?
-      redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      redirect_back_or_default('/')
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
     end
+  end
+
+  def create
+    @user = User.new(params[:user])
+    @user.register if @user && @user.valid?
+    render :action => 'list'
+  end
+
+  def list
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def activate
@@ -71,5 +90,10 @@ class UsersController < ApplicationController
 protected
   def find_user
     @user = User.find(params[:id])
+  end
+
+private
+  def summary_posts
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 end

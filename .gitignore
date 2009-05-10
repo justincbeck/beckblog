@@ -6,6 +6,7 @@ justinbeck.iml
 justinbeck.ipr
 justinbeck.iws
 
+.idea/**/*
 log/*.log
 tmp/**/*
 doc/api

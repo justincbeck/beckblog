@@ -104,7 +104,7 @@ describe <%= controller_class_name %>Controller do
     it "should route the new <%= controller_controller_name %> action correctly" do
       route_for(:controller => '<%= controller_controller_name %>', :action => 'new').should == "/login"
     end
-    it "should route the create <%= controller_controller_name %> correctly" do
+    it "should route the signup <%= controller_controller_name %> correctly" do
       route_for(:controller => '<%= controller_controller_name %>', :action => 'create').should == "/<%= controller_routing_path %>"
     end
     it "should route the destroy <%= controller_controller_name %> action correctly" do

@@ -1,10 +1,12 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
 
+  before_filter :summary_posts
+
   # render new.rhtml
   layout 'main'
   def new
-      @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
+
   end
 
   def create
@@ -39,5 +41,10 @@ protected
   def note_failed_signin
     flash[:error] = "Couldn't log you in as '#{params[:login]}'"
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
+  end
+
+private
+  def summary_posts
+    @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
   end
 end

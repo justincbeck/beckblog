@@ -1,0 +1,18 @@
+<div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+    <h5 style="margin: 0; padding: 5px 0 5px 0;">Administration</h5>
+    <% if logged_in? -%>
+        <h6 style="margin: 0; padding: 5px 0 5px 0;">Posts</h6>
+        <%= link_to 'New Post', '/posts/new' %><br />
+        <%= link_to 'Posts', '/posts/list' %><br />
+        <h6 style="margin: 0; padding: 5px 0 5px 0;">Users</h6>
+        <%= link_to 'New User', '/users/new' %><br />
+        <%= link_to 'Users', '/users/list' %><br />
+        &nbsp;<br />
+        <%= link_to 'Log out', '/logout' %><br />
+        &nbsp;
+    <% else -%>
+        <%= link_to "Log in",  '/login',  { :title => "Log in" } %><br />
+        <%= link_to "Sign up", '/signup', { :title => "Create an account" } %><br />
+        &nbsp;
+    <% end -%>
+</div>
