@@ -6,9 +6,10 @@ justinbeck.iml
 justinbeck.ipr
 justinbeck.iws
 
-.idea/**/*
+.idea
 log/*.log
 tmp/**/*
 doc/api
 doc/app
+test/tmp
 scratch_directory/**/*
