@@ -10,7 +10,7 @@ class UsersControllerTest < ActionController::TestCase
   def test_should_allow_signup
     assert_difference 'User.count' do
       create_user
-      assert_response :redirect
+      assert_response :success
     end
   end
 
@@ -62,7 +62,7 @@ class UsersControllerTest < ActionController::TestCase
   def test_should_activate_user
     assert_nil User.authenticate('aaron', 'test')
     get :activate, :activation_code => users(:aaron).activation_code
-    assert_redirected_to '/session/new'
+    assert_redirected_to '/login'
     assert_not_nil flash[:notice]
     assert_equal users(:aaron), User.authenticate('aaron', 'monkey')
   end
@@ -83,7 +83,7 @@ class UsersControllerTest < ActionController::TestCase
 
   protected
     def create_user(options = {})
-      post :create, :user => { :login => 'quire', :email => 'quire@example.com',
+      post :create, :user => { :login => 'quire', :name => 'Quire', :email => 'quire@example.com',
         :password => 'quire69', :password_confirmation => 'quire69' }.merge(options)
     end
 end

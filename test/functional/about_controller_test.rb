@@ -1,7 +1,9 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
+require 'about_controller'
 
 class AboutControllerTest < ActionController::TestCase
   def test_index
-    assert get :index
+    get :index
+    assert :success
   end
 end

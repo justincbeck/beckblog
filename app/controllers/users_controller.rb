@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # TODO: Figure out how to use 'admin' functionality
   #before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   # Added this so that adding users is protected
-  before_filter :login_required, :only => [:list, :show, :edit, :create] 
+  before_filter :login_required, :only => [:list, :show, :edit, :new] 
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :summary_posts
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.register if @user && @user.valid?
-    render :action => 'list'
+#    render :action => 'list'
   end
 
   def list
