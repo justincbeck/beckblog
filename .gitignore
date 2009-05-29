@@ -6,9 +6,11 @@ justinbeck.iml
 justinbeck.ipr
 justinbeck.iws
 
+.DS_Store
+/**/.DS_Store
 .idea
 log/*.log
-tmp/**/*
+tmp
 doc/api
 doc/app
 test/tmp
