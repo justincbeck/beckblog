@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   before_filter :get_post
 
   def create
-    if @comment = @post.comments.signup(params[:comment])
+    if @comment = @post.comments.create(params[:comment])
       flash[:notice] = "Comment Created"
       UserMailer.deliver_comment(@post.subject, @comment.username)
       redirect_to :controller => 'posts', :action => 'index'

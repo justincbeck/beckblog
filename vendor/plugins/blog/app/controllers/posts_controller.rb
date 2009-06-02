@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def create
     @user = User.all([ "login = ?", current_user ])[0]
 
-    if @post = @user.posts.signup(params[:post])
+    if @post = @user.posts.create(params[:post])
       flash[:notice] = "Post Created"
       redirect_to :action => 'index'
     else

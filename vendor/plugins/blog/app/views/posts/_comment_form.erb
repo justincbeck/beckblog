@@ -4,7 +4,7 @@
     Time: 6:55:02 PM
 %>
 <% remote_form_for :comment, @comment,
-              :url => { :controller => 'comments', :action => 'create', :id => @post },
+              :url => { :controller => 'comments', :action => 'create', :id => post },
               :success => "location.reload(true)" do |f| %>
     Username:<br />
     <%= f.text_field :username %><br />
