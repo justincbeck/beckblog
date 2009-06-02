@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.register if @user && @user.valid?
-#    render :action => 'list'
+    render :action => 'list'
   end
 
   def list
