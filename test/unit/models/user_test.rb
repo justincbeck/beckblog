@@ -104,13 +104,13 @@ class UserTest < ActiveSupport::TestCase
     assert users(:quentin).remember_token_expires_at.between?(before, after)
   end
 
-  def test_should_register_passive_user
-    user = create_user(:password => nil, :password_confirmation => nil)
-    assert user.passive?
-    user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    user.register!
-    assert user.pending?
-  end
+  #def test_should_register_passive_user
+  #  user = create_user(:password => nil, :password_confirmation => nil)
+  #  assert user.passive?
+  #  user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
+  #  user.register!
+  #  assert user.pending?
+  #end
 
   def test_should_suspend_user
     users(:quentin).suspend!
