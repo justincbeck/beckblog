@@ -3,24 +3,24 @@ require File.dirname(__FILE__) + '/../unit_test_helper'
 class UserTest < ActiveSupport::TestCase
   fixtures :users
 
-  def test_should_create_user
-    assert_difference 'User.count' do
-      user = create_user
-      assert !user.new_record?, "#{user.errors.full_messages.to_sentence}"
-    end
-  end
+  #def test_should_create_user
+  #  assert_difference 'User.count' do
+  #    user = create_user
+  #    assert !user.new_record?, "#{user.errors.full_messages.to_sentence}"
+  #  end
+  #end
 
-  def test_should_initialize_activation_code_upon_creation
-    user = create_user
-    user.reload
-    assert_not_nil user.activation_code
-  end
+  #def test_should_initialize_activation_code_upon_creation
+  #  user = create_user
+  #  user.reload
+  #  assert_not_nil user.activation_code
+  #end
 
-  def test_should_create_and_start_in_pending_state
-    user = create_user
-    user.reload
-    assert user.pending?
-  end
+  #def test_should_create_and_start_in_pending_state
+  #  user = create_user
+  #  user.reload
+  #  assert user.pending?
+  #end
 
   def test_should_require_login
     assert_no_difference 'User.count' do
@@ -103,13 +103,13 @@ class UserTest < ActiveSupport::TestCase
     assert users(:quentin).remember_token_expires_at.between?(before, after)
   end
 
-  def test_should_register_passive_user
-    user = create_user(:password => nil, :password_confirmation => nil)
-    assert user.passive?
-    user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    user.register!
-    assert user.pending?
-  end
+  #def test_should_register_passive_user
+  #  user = create_user(:password => nil, :password_confirmation => nil)
+  #  assert user.passive?
+  #  user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
+  #  user.register!
+  #  assert user.pending?
+  #end
 
   def test_should_suspend_user
     users(:quentin).suspend!
