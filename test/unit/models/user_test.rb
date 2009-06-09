@@ -153,8 +153,8 @@ class UserTest < ActiveSupport::TestCase
 
 protected
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
-    record.register! if record.valid?
-    record
+    user = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
+    user.register! if user.valid?
+    user
   end
 end
