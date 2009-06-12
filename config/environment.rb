@@ -17,6 +17,9 @@ Rails::Initializer.run do |config|
   # Adding dependency on AuthLogic gem
   config.gem "authlogic"
 
+  # Added dependency on Factory Girl gem
+  config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
