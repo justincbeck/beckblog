@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../unit_test_helper'
 
 class SessionTest < ActiveSupport::TestCase
   setup :activate_authlogic

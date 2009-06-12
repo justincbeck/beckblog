@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../unit_test_helper'
 
 class PostTest < ActiveSupport::TestCase
 
