@@ -3,3 +3,17 @@ Factory.define :user do |f|
   f.password  "factory_password"
   f.password_confirmation  { |u| u.password }
 end
+
+Factory.define :post do |f|
+  f.subject "This is the subject of a test post."
+  f.body "This is the body of a test post."
+  f.published true
+  f.association :user
+end
+
+Factory.define :comment do |f|
+  f.sequence(:username) { |n| "username-#{n}" }
+  f.email "nobody@justinbeck.com"
+  f.body "This is the body of a comment."
+  f.association :post
+end
