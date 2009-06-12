@@ -6,6 +6,13 @@ ActionController::Routing::Routes.draw do |map|
   map.about '/about', :controller => 'about'
   map.about '/resume', :controller => 'resume'
 
+  # ADDED FOR AUTHLOGIC
+  map.resource :account, :controller => "users"
+  map.resources :users
+  map.resource :user_session
+  map.root :controller => "user_sessions", :action => "new"
+  # END AUTHLOGIC
+
   #map.resources :users,
   #              :member => {
   #                  :list => :get,
