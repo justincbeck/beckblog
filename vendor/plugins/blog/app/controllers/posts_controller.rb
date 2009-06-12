@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   layout 'main'
 
-  before_filter :login_required, :only => [ :new, :create, :list, :edit, :update ]
+  #before_filter :login_required, :only => [ :new, :create, :list, :edit, :update ]
   before_filter :summary_posts, :only => [ :index, :show, :new, :list, :edit ]
 
   def index
