@@ -1,8 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  #map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  #map.login '/login', :controller => 'sessions', :action => 'new'
-  #map.register '/register', :controller => 'users', :action => 'create'
-  #map.signup '/signup', :controller => 'users', :action => 'new'
+  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
+  map.login '/login', :controller => 'user_sessions', :action => 'new'
   map.about '/about', :controller => 'about'
   map.about '/resume', :controller => 'resume'
 
@@ -10,21 +8,20 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :account, :controller => "users"
   map.resources :users
   map.resource :user_session
-  map.root :controller => "user_sessions", :action => "new"
   # END AUTHLOGIC
 
-  #map.resources :users,
-  #              :member => {
-  #                  :list => :get,
-  #                  :show => :get,
-  #                  :edit => :get,
-  #                  :update => :post,
-  #              },
-  #              :collection => {
-  #                  :list => :get
-  #              } do | user |
-  #end
-  #map.resource :session
+  map.resources :users,
+                :member => {
+                    :list => :get,
+                    :show => :get,
+                    :edit => :get,
+                    :update => :post,
+                },
+                :collection => {
+                    :list => :get
+                } do | user |
+  end
+
   map.resources :posts,
                 :member => {
                     :edit => :get,
