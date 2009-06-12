@@ -1,22 +1,24 @@
-<p>
-  <b>Login:</b><%=h @user.login %>
-</p>
-<p>
-  <b>Login count:</b><%=h @user.login_count %>
-</p>
-<p>
-  <b>Last request at:</b><%=h @user.last_request_at %>
-</p>
-<p>
-  <b>Last login at:</b><%=h @user.last_login_at %>
-</p>
-<p>
-  <b>Current login at:</b><%=h @user.current_login_at %>
-</p>
-<p>
-  <b>Last login ip:</b><%=h @user.last_login_ip %>
-</p>
-<p>
-  <b>Current login ip:</b><%=h @user.current_login_ip %>
-</p>
-<%= link_to 'Edit', edit_account_path %>
+<div class="prepend-3" style="padding-top: 25px;">
+    <p>
+      <b>Login:</b>&nbsp;<%=h @user.login %>
+    </p>
+    <p>
+      <b>Login count:</b>&nbsp;<%=h @user.login_count %>
+    </p>
+    <p>
+      <b>Last request at:</b>&nbsp;<%=h @user.last_request_at %>
+    </p>
+    <p>
+      <b>Last login at:</b>&nbsp;<%=h @user.last_login_at %>
+    </p>
+    <p>
+      <b>Current login at:</b>&nbsp;<%=h @user.current_login_at %>
+    </p>
+    <p>
+      <b>Last login ip:</b>&nbsp;<%=h @user.last_login_ip %>
+    </p>
+    <p>
+      <b>Current login ip:</b>&nbsp;<%=h @user.current_login_ip %>
+    </p>
+    <%= link_to 'Edit', edit_account_path %>
+</div>
