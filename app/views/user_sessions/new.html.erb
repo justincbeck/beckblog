@@ -1,5 +1,4 @@
-<h1>Login</h1>
-
+<div class="prepend-3" style="padding-top: 50px">
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
   <%= f.label :login %><br />
@@ -11,4 +10,5 @@
   <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
   <br />
   <%= f.submit "Login" %>
-<% end %>
+<% end -%>
+</div>

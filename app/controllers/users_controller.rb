@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:show, :edit, :list, :update, :new, :create]
+  before_filter :summary_posts, :only => [ :show, :new, :list, :edit ]
+  
+  layout 'main'
 
   def new
     @user = User.new
@@ -20,6 +22,10 @@ class UsersController < ApplicationController
     @user = @current_user
   end
 
+  def list
+    @users = User.all
+  end
+
   def edit
     @user = @current_user
   end
@@ -33,4 +39,9 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
+
+  private
+    def summary_posts
+      @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
+    end
 end

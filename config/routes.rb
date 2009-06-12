@@ -2,11 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
   map.about '/about', :controller => 'about'
-  map.about '/resume', :controller => 'resume'
+  map.resume '/resume', :controller => 'resume'
+  map.register '/register', :controller => 'users', :action => 'new'
 
   # ADDED FOR AUTHLOGIC
   map.resource :account, :controller => "users"
-  map.resources :users
   map.resource :user_session
   # END AUTHLOGIC
 
@@ -32,8 +32,6 @@ ActionController::Routing::Routes.draw do |map|
                 } do | post |
     post.resources :comments
   end
-
-  map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
 
   # The priority is based upon order of creation: first created -> highest priority.
 

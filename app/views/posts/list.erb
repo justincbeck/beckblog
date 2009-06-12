@@ -15,7 +15,7 @@
             <tr>
                 <td><%= link_to post.subject, edit_post_path(post) %></td>
                 <td><%= post.created_at.strftime("%m/%d/%Y") %></td>
-                <td>Change Me to the current user (AuthLogic)</td>
+                <td><%= User.find(post.user_id).login %></td>
                 <% if post.published? %>
                     <td>Published</td>
                 <% else %>
