@@ -6,13 +6,8 @@ class CommentsController < ApplicationController
   before_filter :get_post
 
   def create
-    if @comment = @post.comments.create(params[:comment])
-      flash[:notice] = "Comment Created"
-      redirect_to :controller => 'posts', :action => 'index'
-    else
-      flash[:error] = "Comment Not Created"
-      render :action => new
-    end
+    @post.comments.create(params[:comment])
+    redirect_to :controller => 'posts', :action => 'index'
   end
 
   private

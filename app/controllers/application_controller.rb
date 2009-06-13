@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
     private
+      def summary_posts
+        @current_user = current_user
+        @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
+      end
+
       def current_user_session
         return @current_user_session if defined?(@current_user_session)
         @current_user_session = UserSession.find

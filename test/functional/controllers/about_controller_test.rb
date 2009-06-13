@@ -5,6 +5,5 @@ class AboutControllerTest < ActionController::TestCase
   def test_index
     get :index
     assert :success
-    assert assigns(:summary_posts)
   end
 end

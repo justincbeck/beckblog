@@ -6,12 +6,19 @@ class UserSessionsControllerTest < ActionController::TestCase
   
   def test_create_session
     session = create_session
+    post :create, :user_session => session
+    assert_redirected_to '/account'
   end
 
-  protected
-    def create_session(options = {})
-      session = Factory.build(:user, options)
-      session.save! if session.valid?
-      session
-    end
+  def test_create_invalid_session
+    post :create, :user_session => 'invalid'
+    assert_routing( '/login', :controller => 'user_sessions', :action => 'new' )
+  end
+
+  def test_destroy_session
+    session = create_session
+    post :create, :user_session => session
+    get :destroy
+    assert_redirected_to '/'
+  end
 end

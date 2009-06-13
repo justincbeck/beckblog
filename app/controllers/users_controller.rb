@@ -40,9 +40,4 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
-
-  private
-    def summary_posts
-      @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
-    end
 end

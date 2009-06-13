@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   layout 'main'
 
   before_filter :require_user, :only => [ :edit, :list, :update, :new, :create ]
-  before_filter :summary_posts, :only => [ :index, :show, :new, :list, :edit ]
+  before_filter :summary_posts, :only => [ :index, :show, :new, :create, :list, :edit ]
 
   def index
     @posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC")
@@ -36,18 +36,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = @current_user.posts.create(params[:post])
-      flash[:notice] = "Post Created"
-      redirect_to :action => 'index'
-    else
-      flash[:error] = "Post Not Created"
-      render :action => 'new'
-    end
+    @current_user.posts.create(params[:post])
+    redirect_to :action => 'index'
   end
-
-  private
-    def summary_posts
-      @current_user = current_user
-      @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
-    end
 end
