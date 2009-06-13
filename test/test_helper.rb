@@ -49,5 +49,4 @@ class ActiveSupport::TestCase
     session.save! if session.valid?
     session
   end
-
 end

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [ :new, :create ]
   before_filter :require_user, :only => [ :show, :edit, :list, :update ]
-  before_filter :summary_posts, :only => [ :create, :show, :new, :list, :edit ]
+  before_filter :summary_posts, :only => [ :create, :show, :new, :list, :edit, :update ]
   
   layout 'main'
 
