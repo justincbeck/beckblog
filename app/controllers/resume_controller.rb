@@ -3,7 +3,7 @@
 # Date: Apr 2, 2009
 # Time: 8:59:02 PM
 class ResumeController < ApplicationController
-  layout 'main'
+    layout 'main'
 
     def index
         @current_user = current_user
