@@ -43,4 +43,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_session(options = {})
+    session = Factory.build(:user, options)
+    session.save! if session.valid?
+    session
+  end
+
 end

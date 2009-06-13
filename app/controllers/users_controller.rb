@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [ :new, :create ]
   before_filter :require_user, :only => [ :show, :edit, :list, :update ]
-  before_filter :summary_posts, :only => [ :show, :new, :list, :edit ]
+  before_filter :summary_posts, :only => [ :create, :show, :new, :list, :edit ]
   
   layout 'main'
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = @current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to account_url
