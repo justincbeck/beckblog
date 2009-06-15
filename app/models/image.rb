@@ -56,7 +56,7 @@ class Image < ActiveRecord::Base
   end
 
   def img_tag_thumbnail
-    kf = 200.0 / ( width > height ? width : height )
+    kf = 100.0 / ( width > height ? width : height )
     tw = (width.to_f * kf).to_i
     th = (height.to_f * kf).to_i
     "<img src='/photo/t/#{self.id}.jpeg' width='#{tw}' height='#{th}' alt='#{self.name}'>"

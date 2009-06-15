@@ -14,9 +14,7 @@ class ImagesController < ApplicationController
 
   def list
     @images = Image.all
-    for image in @images
-      puts image.name
-    end
+    @index = 1
   end
 
   def show
