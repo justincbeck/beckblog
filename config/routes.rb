@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.about '/about', :controller => 'about'
   map.resume '/resume', :controller => 'resume'
   map.register '/register', :controller => 'users', :action => 'new'
+  #map.images '/images', :controller => 'images', :action => 'list'
 
   # ADDED FOR AUTHLOGIC
   map.resource :account, :controller => "users"
