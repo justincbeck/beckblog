@@ -1,10 +1,12 @@
-<%= @image.img_tag %>
+<div class="prepend-3" style="padding-top: 25px;">
+    <%= @image.img_tag %>
 
-<% for column in Image.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @image.send(column.name) %>
-</p>
-<% end %>
+    <% for column in Image.content_columns %>
+    <p>
+      <b><%= column.human_name %>:</b> <%=h @image.send(column.name) %>
+    </p>
+    <% end %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @image %> |
-<%= link_to 'Back', :action => 'list' %>
+    <%= link_to 'Edit', :action => 'edit', :id => @image %> |
+    <%= link_to 'Back', :action => 'list' %>
+</div>

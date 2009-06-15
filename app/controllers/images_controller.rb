@@ -1,15 +1,22 @@
 class ImagesController < ApplicationController
+
+  layout 'main', :except => :show
+
+  before_filter :summary_posts, :only => [ :index, :new, :create, :list, :show, :edit, :update, :destroy ]
+
   def index
     list
     render :action => 'list'
   end
 
-  # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
   def list
     @images = Image.all
+    for image in @images
+      puts image.name
+    end
   end
 
   def show

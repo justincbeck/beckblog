@@ -11,6 +11,7 @@ justinbeck.iws
 .idea
 log/*.log
 tmp
+public/photo
 doc/api
 doc/app
 test/tmp

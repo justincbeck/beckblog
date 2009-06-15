@@ -1,4 +1,5 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../functional_test_helper'
+require 'images_controller'
 
 class ImagesControllerTest < ActionController::TestCase
   test "should get index" do
@@ -40,6 +41,6 @@ class ImagesControllerTest < ActionController::TestCase
       delete :destroy, :id => images(:one).to_param
     end
 
-    assert_redirected_to images_path
+    assert_redirected_to '/images'
   end
 end
