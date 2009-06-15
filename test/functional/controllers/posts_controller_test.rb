@@ -49,7 +49,6 @@ class PostsControllerTest < ActionController::TestCase
     assert assigns(:summary_posts)
   end
 
-  # TODO - Look in to test_update_post further, I think it's wrong!
   def test_update_post
     create_session(:login => "session_user", :password_salt => salt = Authlogic::Random.hex_token, :crypted_password => Authlogic::CryptoProviders::Sha512.encrypt("justinrocks" + salt), :persistence_token => Authlogic::Random.hex_token)
     new_post = Factory.create(:post, {})
