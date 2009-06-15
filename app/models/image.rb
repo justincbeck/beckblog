@@ -8,7 +8,7 @@ class Image < ActiveRecord::Base
     errors.add_on_empty 'name'
 
     if not (@file.kind_of? StringIO or @file.kind_of? Tempfile)
-      errors.add_to_base("No file file selected")
+      errors.add_to_base("No file selected")
       return
     end
 
@@ -42,8 +42,8 @@ class Image < ActiveRecord::Base
 
     FileUtils.chmod 0644, dest_photo
 
-    `#{IMAGE_MAGICK_PATH}/convert -size 200x200 #{dest_photo} \
-    -resize 200x200 -quality 90 +profile \"*\" #{dest_photo_t} 2>&1`
+    `#{IMAGE_MAGICK_PATH}/convert -size 100x100 #{dest_photo} \
+    -resize 100x100 -quality 90 +profile \"*\" #{dest_photo_t} 2>&1`
   end
 
   def after_destroy

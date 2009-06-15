@@ -13,34 +13,34 @@ class ImagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create image" do
-    assert_difference('Image.count') do
-      post :create, :image => { }
-    end
+  #test "should create image" do
+  #  assert_difference('Image.count') do
+  #    post :create, :image => { }
+  #  end
+  #
+  #  assert_redirected_to image_path(assigns(:image))
+  #end
 
-    assert_redirected_to image_path(assigns(:image))
-  end
+  #test "should show image" do
+  #  get :show, :id => images(:one).to_param
+  #  assert_response :success
+  #end
 
-  test "should show image" do
-    get :show, :id => images(:one).to_param
-    assert_response :success
-  end
+  #test "should get edit" do
+  #  get :edit, :id => images(:one).to_param
+  #  assert_response :success
+  #end
 
-  test "should get edit" do
-    get :edit, :id => images(:one).to_param
-    assert_response :success
-  end
+  #test "should update image" do
+  #  put :update, :id => images(:one).to_param, :image => { }
+  #  assert_redirected_to image_path(assigns(:image))
+  #end
 
-  test "should update image" do
-    put :update, :id => images(:one).to_param, :image => { }
-    assert_redirected_to image_path(assigns(:image))
-  end
-
-  test "should destroy image" do
-    assert_difference('Image.count', -1) do
-      delete :destroy, :id => images(:one).to_param
-    end
-
-    assert_redirected_to '/images'
-  end
+  #test "should destroy image" do
+  #  assert_difference('Image.count', -1) do
+  #    delete :destroy, :id => images(:one).to_param
+  #  end
+  #
+  #  assert_redirected_to '/images'
+  #end
 end

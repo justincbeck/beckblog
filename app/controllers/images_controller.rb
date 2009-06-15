@@ -25,6 +25,7 @@ class ImagesController < ApplicationController
   end
 
   def create
+    the_image = params[:image]
     @image = Image.new(params[:image])
     if @image.save
       flash[:notice] = 'Image was successfully created.'
