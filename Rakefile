@@ -9,6 +9,12 @@ require 'rake/rdoctask'
 require 'metric_fu'
 require 'tasks/rails'
 
+#task :default => :test
+
 desc 'Default: run unit tests.'
-task :default => :test
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/functional/controllers/*test.rb', 'test/integration/*test.rb', 'test/performance/*test.rb', 'test/unit/models/*test.rb']
+  t.verbose = true
+end
 
