@@ -10,4 +10,8 @@ class BrowsingTest < ActionController::PerformanceTest
   def test_about
     get '/about'
   end
+
+  def test_resume
+    get '/resume'
+  end
 end
