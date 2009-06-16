@@ -2,20 +2,20 @@ require File.dirname(__FILE__) + '/../functional_test_helper'
 require 'images_controller'
 
 class ImagesControllerTest < ActionController::TestCase
-  test "should get index" do
+  def test_get_index
     get :index
     assert_response :success
     assert_not_nil assigns(:images)
   end
 
-  test "should get new" do
+  def test_get_new
     get :new
     assert_response :success
   end
 
-  #test "should create image" do
+  #def test_create_image
   #  assert_difference('Image.count') do
-  #    post :create, :image => { }
+  #    post :create, :headers => { [Content-Type] => 'multipart/form-data' } , :image => { :name => "test", :file => StringIO.new('Photo_89.jpg') }
   #  end
   #
   #  assert_redirected_to image_path(assigns(:image))
