@@ -17,8 +17,3 @@ Factory.define :comment do |f|
   f.body "This is the body of a comment."
   f.association :post
 end
-
-Factory.define :image do |f|
-  f.name "image_name"
-  f.file "Photo 37.jpg"
-end
