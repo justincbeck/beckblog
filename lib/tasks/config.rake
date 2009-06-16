@@ -15,13 +15,15 @@ MetricFu::Configuration.run do |config|
                         :error_cyclo => "7",
                         :formater => "text"} #this needs to be set to "text"
     config.churn    = { :start_date => "1 year ago", :minimum_churn_count => 10}
-    config.rcov     = { :test_files => ['test/**/*_test.rb',
-                                        'spec/**/*_spec.rb'],
+    config.rcov     = { :test_files => ['test/functional/controllers/*test.rb',
+                                        'test/integration/*test.rb',
+                                        'test/performance/*test.rb',
+                                        'test/unit/models/*test.rb' ],
                         :rcov_opts => ["--sort coverage",
                                        "--no-html",
                                        "--text-coverage",
                                        "--no-color",
                                        "--profile",
                                        "--rails",
-                                       "--exclude /gems/,/Library/,spec"]}
+                                       "--exclude /gems/,/Library/,spec" ]}
 end

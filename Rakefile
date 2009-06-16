@@ -14,7 +14,10 @@ require 'tasks/rails'
 desc 'Default: run unit tests.'
 Rake::TestTask.new do |t|
   t.libs << "test"
-  t.test_files = FileList['test/functional/controllers/*test.rb', 'test/integration/*test.rb', 'test/performance/*test.rb', 'test/unit/models/*test.rb']
+  t.test_files = FileList['test/functional/controllers/*test.rb',
+                          'test/integration/*test.rb',
+                          'test/performance/*test.rb',
+                          'test/unit/models/*test.rb' ]
   t.verbose = true
 end
 
