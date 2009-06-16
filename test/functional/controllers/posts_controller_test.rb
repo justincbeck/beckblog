@@ -63,8 +63,4 @@ class PostsControllerTest < ActionController::TestCase
     assert :success
     assert_redirected_to :controller => 'posts', :action => 'index'
   end
-
-  def test_false
-    assert false
-  end
 end
