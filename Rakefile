@@ -9,8 +9,6 @@ require 'rake/rdoctask'
 require 'metric_fu'
 require 'tasks/rails'
 
-#task :default => :test
-
 desc 'Default: run unit tests.'
 Rake::TestTask.new do |t|
   t.libs << "test"

@@ -3,10 +3,11 @@
 # Date: Apr 2, 2009
 # Time: 8:59:02 PM
 class ResumeController < ApplicationController
+    before_filter :summary_posts, :only => [ :index ]
+
     layout 'main'
 
     def index
         @current_user = current_user
-        @summary_posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC", :limit => 5)
     end
 end

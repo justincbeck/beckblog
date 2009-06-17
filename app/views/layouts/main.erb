@@ -8,51 +8,63 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Don't look just jump</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <title>Don't look just jump</title>
 
-    <%= stylesheet_link_tag "screen", :media => "screen, projection" %>
-    <%= stylesheet_link_tag "print", :media => "print" %>
-    <!--[if IE]>
+  <%= stylesheet_link_tag "screen", :media => "screen, projection" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+  <!--[if IE]>
         <%= stylesheet_link_tag "ie", :media => "screen, projection" %>
     <![endif]-->
 
-    <%= javascript_include_tag "prototype" %>
-    <%= javascript_include_tag "effects" %>
+  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "effects" %>
 
 </head>
 <body>
 <div class="container">
-    <div class="prepend-3 span-18">
-        <div class="span-18" style="background-color: #E8E8E8;">
-            <div class="span-18 main_background" style="margin-bottom: -60px;" ></div>
-            <div class="span-13" style="padding: 10px; border-right: thin dotted;">
-                <h1 style="margin-bottom: -2px;">Don't Look, Just Jump</h1>
-                <div id="body" style="margin-top: 10px">
-                    <%= @content_for_layout %>
-                </div>
-            </div>
-            <div class="span-4 last" style="padding: 10px; margin-left: -10px;">
-                <%= image_tag "justin.jpg", :alt => 'Justin C Beck', :size => "157x157", :style => "border:1px solid #fff; margin-bottom: 10px;" %>
-                <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
-                    <h5 style="margin: 0; padding: 5px 0 5px 0;">About the Blog and Me</h5>
-                    <%= link_to 'About Me', '/about' %><br />
-                    <%= link_to 'Resume', '/resume' %><br />
-                    <%= link_to 'Blog', '/' %><br />
-                    &nbsp;
-                </div>
-                <% if @summary_posts.size > 0 %>
-                    <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
-                        <h5 style="margin: 0; padding: 5px 0 5px 0;">Recent Posts</h5>
-                        <% @summary_posts.each do |post| -%>
-                          <%= link_to post.subject, post %><br />
-                        <% end -%><br />
-                    </div>
-                <% end %>
-                <%= render :partial => 'layouts/admin' %>
-            </div>
+  <div class="prepend-3 span-18">
+    <div class="span-18" style="background-color: #E8E8E8;">
+      <div class="span-18 main_background" style="margin-bottom: -60px;">
+        <div class="span-18" style="margin-top: 80px; border-bottom: 1px solid #7FAEBA;">
+          <div class="span-13" style="margin-top: -10px; padding-left: 5px; height: 3em; color: #7FAEBA;">
+            &nbsp;&nbsp;<strong>Latest Tweet:</strong>&nbsp;<%= $twitter_status %>
+            <!--<strong>Latest Tweet:</strong>&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever....-->
+          </div>
         </div>
+      </div>
+      <div class="span-13" style="padding: 10px; border-right: thin dotted;">
+        <h1 style="margin-bottom: -2px;">Don't Look, Just Jump</h1>
+        <div id="body" style="margin-top: 50px">
+          <%= @content_for_layout %>
+        </div>
+      </div>
+      <div class="span-4 last" style="padding: 10px; margin-left: -10px;">
+        <%= image_tag "justin.jpg", :alt => 'Justin C Beck', :size => "157x157", :style => "border:1px solid #fff; margin-bottom: 10px;" %>
+        <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+          <h5 style="margin: 0; padding: 5px 0 5px 0;">About the Blog and Me</h5>
+          <%= link_to 'About Me', '/about' %>
+          <br/>
+          <%= link_to 'Resume', '/resume' %>
+          <br/>
+          <%= link_to 'Blog', '/' %>
+          <br/>
+          &nbsp;
+        </div>
+        <% if @summary_posts.size > 0 %>
+            <div style="padding-left: 10px; width: 147px; border: 1px solid #fff; margin-bottom: 10px;">
+              <h5 style="margin: 0; padding: 5px 0 5px 0;">Recent Posts</h5>
+              <% @summary_posts.each do |post| -%>
+                  <%= link_to post.subject, post %>
+                  <br/>
+              <% end -%>
+              <br/>
+            </div>
+        <% end %>
+        <%= render :partial => 'layouts/admin' %>
+      </div>
     </div>
+  </div>
 </div>
 </body>
 </html>

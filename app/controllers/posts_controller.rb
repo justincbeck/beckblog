@@ -5,10 +5,10 @@
 class PostsController < ApplicationController
   self.append_view_path(File.join(File.dirname(__FILE__), '..', 'views'))
 
-  layout 'main'
-
   before_filter :require_user, :only => [ :edit, :list, :update, :new, :create ]
   before_filter :summary_posts, :only => [ :index, :show, :new, :create, :list, :edit ]
+
+  layout 'main'
 
   def index
     @posts = Post.find(:all, :conditions => [ "published = ?", true ], :order => "created_at DESC")

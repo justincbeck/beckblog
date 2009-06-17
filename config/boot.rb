@@ -10,6 +10,7 @@ module Rails
         preinitialize
         pick_boot.run
       end
+      $twitter_status = 'Status pending...'
     end
 
     def booted?
