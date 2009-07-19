@@ -1,44 +1,30 @@
-#############################################################
-#	Application
-#############################################################
+set :application, "beckblog"
 
-set :application, "example"
-set :deploy_to, "/var/www/#{application}"
+# If you aren't deploying to /u/apps/#{application} on the target
+# servers (which is the default), you can specify the actual location
+# via the :deploy_to variable:
+set :deploy_to, "/opt/myapp"
 
-#############################################################
-#	Settings
-#############################################################
+# If you aren't using Subversion to manage your source code, specify
+# your SCM below:
+set :scm, :git
+set :repository, "git@github.com:justincbeck/beckblog.git"
+set :branch, "master"
+set :deploy_via, :remote_cache
 
-default_run_options[:pty] = true
-set :use_sudo, true
+set :user, 'jbeck'
+set :ssh_options, { :forward_agent => true }
 
-#############################################################
-#	Servers
-#############################################################
+role :db,  "justinbeck.com", :primary => true
 
-set :user, "jim"
-set :domain, "example.com"
-server domain, :app, :web
-role :db, domain, :primary => true
-
-#############################################################
-#	Subversion
-#############################################################
-
-set :repository,  "http://www.example.com/svn/example"
-set :svn_username, "jim"
-set :svn_password, "password"
-set :checkout, "export"
-
-#############################################################
-#	Passenger
-#############################################################
-
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
-end
 
-after :deploy, "passenger:restart"
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
+end
