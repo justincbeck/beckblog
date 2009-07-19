@@ -2,9 +2,9 @@
 
 .generators
 .rakeTasks
-justinbeck.iml
-justinbeck.ipr
-justinbeck.iws
+beckblog.iml
+beckblog.ipr
+beckblog.iws
 
 .DS_Store
 /**/.DS_Store
