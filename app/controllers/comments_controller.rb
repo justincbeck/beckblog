@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
   before_filter :get_post
 
   def create
-    @post.comments.create(params[:comment])
+    if simple_captcha_valid?
+      @post.comments.create(params[:comment])
+    end
     redirect_to :controller => 'posts', :action => 'index'
   end
 

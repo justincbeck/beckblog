@@ -11,6 +11,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
   # END AUTHLOGIC
 
+  # ADDED FOR SIMPLE_CAPTCHA
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+  # END SIMPLE_CAPTCHA
+
   map.resources :users,
                 :member => {
                     :list => :get,
